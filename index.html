@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Hazze Template">
+    <meta name="keywords" content="Hazze, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Forest fire</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .header-class{
+            position: relative;
+            left: 60px;
+            top: 45px;
+            color: white;
+
+
+        }
+    </style>
+
+<script>
+        window.onload = function () {
+        
+        var dps = []; // dataPoints
+        var chart = new CanvasJS.Chart("chartContainer", {
+        title :{
+        text: "Forest Fire prediction "
+        },
+        axisY: {
+        
+                title: "fuzzy index",
+                stripLines: [{
+        value: 50,
+        label: "fire alert"
+        }]
+        },
+            axisX: {
+        title: "time",
+        
+        suffix: "hr",
+        
+        },
+        data: [{
+        type: "line",
+        dataPoints: dps
+        }]
+        });
+        
+        var xVal = 0;
+        var yVal = 25;
+        var updateInterval = 1000;
+        var dataLength = 10; // number of dataPoints visible at any point
+        
+        var updateChart = function (count) {
+        
+        count = count || 1;
+        
+        for (var j = 0; j < count; j++) {
+        yVal = yVal +  Math.round(2 + Math.random() *(-2-2));
+        dps.push({
+        x: xVal,
+        y: yVal
+        });
+        xVal++;
+               
+                if(yVal>50)
+                 {
+                   alert("Chance of forest fire")
+                 }
+        }
+        
+        if (dps.length > dataLength) {
+        dps.shift();
+        }
+        
+        chart.render();
+        };
+        
+        updateChart(dataLength);
+        setInterval(function(){updateChart()}, updateInterval);
+        
+        
+        
+        
+        var chart = new CanvasJS.Chart("chartContaine", {
+        title :{
+        text: "Forest Fire live Status "
+        },
+        axisY: {
+        
+                title: "fuzzy index",
+                stripLines: [{
+        value: 50,
+        label: "fire alert"
+        }]
+        },
+            axisX: {
+        title: "time",
+        
+        suffix: "hr",
+        
+        },
+        data: [{
+        type: "line",
+        dataPoints: dps
+        }]
+        });
+        
+        var xVal = 0;
+        var yVal = 25;
+        var updateInterval = 1000;
+        var dataLength = 10; // number of dataPoints visible at any point
+        
+        var updateChart = function (count) {
+        
+        count = count || 1;
+        
+        for (var j = 0; j < count; j++) {
+        yVal = yVal +  Math.round(2 + Math.random() *(-2-2));
+        dps.push({
+        x: xVal,
+        y: yVal
+        });
+        xVal++;
+               
+                if(yVal>50)
+                 {
+                   alert("Chance of forest fire")
+                 }
+        }
+        
+        if (dps.length > dataLength) {
+        dps.shift();
+        }
+        
+        chart.render();
+        };
+        
+        updateChart(dataLength);
+        setInterval(function(){updateChart()}, updateInterval);
+        
+        
+        }
+        
+        
+        
+        </script>
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header-section" bgcolor="black">
+        <h3 class="header-class">Forest Department</h3>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-2">
+                    <div class="logo">
+                        
+                    </div>
+                </div>
+                <div class="col-lg-10 col-md-10">
+                    <div class="main-menu mobile-menu">
+                        <ul>
+                           
+                            <li class="active"><a href="./index.html">Home</a></li>
+                            <li><a href="./about-us.html">About Us</a></li>
+                            <li><a href="./blog.html">Blog</a></li>
+                            <li><a href="./gallery.html">Gallery</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">Naoh</a></li>
+                                    <li><a href="#">Padis</a></li>
+                                    <li><a href="#">Jacob</a></li>
+                                    <li><a href="#">Gomez</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="./contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+    <br><br><br>
+    <!-- Header End -->
+
+    <!-- Hero Section Begin -->
+            
+
+    <!-- Hero Section End -->
+    <div class= "container">
+    <div class="row">
+            <!--<div class="col-md-6"><div id="chartContainer" style="height: 300px; width: 100%;"></div>
+            <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script></div> -->
+            <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+            <div id="chartContaine" style="height: 300px; width: 100%;"></div>
+            <br>
+            <br>
+            <div class="col-md-7"style="height: 300px; width: 100%;" >
+
+                    <img src="img/Screenshot.png">
+            
+                  </div>
+            <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+          </div>
+          
+        </div>
+
+    <!-- Blog Section End -->
+
+    <!-- Footer Section Begin -->
+    
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
